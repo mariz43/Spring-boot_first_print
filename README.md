@@ -88,6 +88,7 @@ And add the Spring Boot dependencies in pom.xml:
         <scope>test</scope>
     </dependency>
 </dependencies>
+
 Then, build and run the project:
 
 CMD
@@ -99,6 +100,7 @@ Inside src/main/java/com/example/springbootdemo/, create a class SpringBootDemoA
 java
 Copy
 Edit
+
 package com.example.springbootdemo;
 
 import org.springframework.boot.SpringApplication;
@@ -110,6 +112,7 @@ public class SpringBootDemoApplication {
         SpringApplication.run(SpringBootDemoApplication.class, args);
     }
 }
+
 This is the entry point of your Spring Boot application.
 
 

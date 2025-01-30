@@ -156,7 +156,4 @@ Hello, Spring Boot!
 ```
 ```
 
-This README provides clear instructions and ensures that the code blocks are properly formatted for GitHub.
-This README provides clear instructions and ensures that the code blocks are properly formatted for GitHub.
 
-Similar code found with 3 license types

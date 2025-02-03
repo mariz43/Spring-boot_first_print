@@ -154,6 +154,76 @@ You should see:
 ```sh
 Hello, Spring Boot!
 ```
+
+A simple Spring Boot REST API that accepts user input in JSON format and responds with a personalized greeting.
+Code Implementation
+4️⃣ Create a User Model
+Inside src/main/java/com/example/demo/, create User.java:
 ```
+java
+Copy
+Edit
+package com.example.demo;
 
+public class User {
+    private String name;
+    private int age;
 
+    // Default Constructor
+    public User() {}
+
+    // Getters and Setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+```
+Inside src/main/java/com/example/demo/, create HelloController.java:
+```
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api")
+public class HelloController {
+
+    @PostMapping("/greet")
+    public String greetUser(@RequestBody User user) {
+        return "Hello, " + user.getName() + "! You are " + user.getAge() + " years old.";
+    }
+}
+```
+Using Postman
+Start the application:
+sh
+Copy
+Edit
+mvn spring-boot:run
+Open Postman and set up a request:
+Method: POST
+URL: http://localhost:9090/api/greet
+Headers:
+bash
+Copy
+Edit
+Content-Type: application/json
+
+```
+{
+  "name": "Mariz",
+  "age": 25
+}
+```
